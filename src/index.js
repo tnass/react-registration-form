@@ -1,6 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
 import App from './App';
+import DefaultThemeProvider from './theme/theme';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+ReactDOM.render(
+  <DefaultThemeProvider>
+    <App />
+  </DefaultThemeProvider>,
+  document.getElementById('root')
+);
