@@ -1,10 +1,10 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import styled from 'styled-components';
 import prop from 'lodash/fp/prop';
-
+import RegistrationFormComponent from './components/RegistrationForm/RegistrationForm.component';
 
 const Container = styled.div`
-  background-color: ${prop('theme.colors.brand.darkGrey')};
+  background-color: ${prop('theme.colors.brand.grey')};
   min-height: 100vh;
   text-align: center;
 `;
@@ -21,7 +21,6 @@ const Body = styled.section`
 
 `;
 
-
 class App extends Component {
   render() {
     return (
@@ -30,7 +29,7 @@ class App extends Component {
           <p>Registration Form Component Demo Page</p>
         </Header>
         <Body>
-
+        <RegistrationFormComponent onSubmit={() => {console.log('submitting')}}/>
         </Body>
       </Container>
     );

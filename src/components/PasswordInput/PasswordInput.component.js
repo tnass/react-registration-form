@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import T from 'prop-types';
 import InputComponent from '../Input/Input.component';
 
-const VisibilityToggle = styled.button.attrs({ type: 'button' })`
+const VisibilityToggle = styled.input.attrs({ type: 'checkbox' })`
   ::before {
     content: '👁';
   }
@@ -31,11 +31,12 @@ class PasswordInputComponent extends Component {
   };
 
   render() {
-    const { label, placeholder } = this.props;
+    const { label, placeholder, ...props } = this.props;
+    const { isVisible } = this.state;
     return (
       <React.Fragment>
-        <InputComponent type="password" placeholder={placeholder} label={label}/>
-        <VisibilityToggle onClick={this.togglePasswordVisibility}/>
+        <InputComponent type="password" placeholder={placeholder} label={label} {...props} />
+        <VisibilityToggle onChange={this.togglePasswordVisibility} value={isVisible} />
       </React.Fragment>
     );
   }

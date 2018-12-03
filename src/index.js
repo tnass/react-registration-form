@@ -5,7 +5,7 @@ import DefaultThemeProvider from './theme/theme';
 
 ReactDOM.render(
   <DefaultThemeProvider>
-    <App />
+    <App/>
   </DefaultThemeProvider>,
   document.getElementById('root')
 );
