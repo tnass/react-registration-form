@@ -10,11 +10,10 @@ const Container = styled.div`
 `;
 
 const Header = styled.header`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  padding: 10px;
   font-size: ${prop('theme.fontSizes.large')};
   color: ${prop('theme.colors.brand.white')};
+  text-align: center;
 `;
 
 const Body = styled.section`

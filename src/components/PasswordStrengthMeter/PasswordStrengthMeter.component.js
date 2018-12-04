@@ -12,15 +12,16 @@ import {
 
 const CheckList = styled.ol`
   list-style: none;
+  padding-left: 0;
+  text-align: left;
 `;
 
 const CheckListItem = styled.li`
-
+  padding: 8px;
 `;
 
 const Check = styled.span`
   color: ${props => (props.isChecked) ? prop('theme.colors.brand.green') : prop('theme.colors.brand.red')};
-
 
   ::before {
     content: '${props => (props.isChecked) ? '✓' : '✗'}';

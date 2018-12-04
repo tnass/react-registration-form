@@ -7,12 +7,14 @@ export const theme = {
     brand: {
       white: '#fff',
       grey: '#282c34',
-      green: 'green',
-      red: 'red'
+      lightGrey: '#f3f3f3',
+      green: '#20bf55',
+      red: '#ff0022'
     },
   },
   fontSizes: {
-    large: 'calc(10px + 2vmin)'
+    medium: '14px',
+    large: '20px'
   }
 };
 

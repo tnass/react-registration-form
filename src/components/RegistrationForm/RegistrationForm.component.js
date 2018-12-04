@@ -7,7 +7,13 @@ import ButtonComponent from '../Button/Button.component';
 import PasswordInputComponent from '../PasswordInput/PasswordInput.component';
 import PasswordStrengthMeterComponent from '../PasswordStrengthMeter/PasswordStrengthMeter.component';
 
-const FormWrapper = styled.div``;
+const Form = styled.form`
+ width: 80%;
+ max-width: 600px;
+ display: flex;
+ flex-direction: column;
+ margin: 0 auto;
+`;
 
 class RegistrationFormComponent extends Component {
   static propTypes = {
@@ -58,32 +64,30 @@ class RegistrationFormComponent extends Component {
   };
 
   render() {
-    const { isSubmitting, email, password } = this.state;
+    const { isSubmitting, email, password, isValid } = this.state;
 
     return (
-      <FormWrapper>
-        <form onSubmit={this.handleSubmit} noValidate>
-          <InputComponent
-            type={'email'}
-            label={'Your e-mail address'}
-            placeholder={'email'}
-            value={email}
-            onChange={this.handleInputChange('email')}
-          />
-          <PasswordInputComponent
-            label={'Your password'}
-            placeholder={'password'}
-            value={password}
-            onChange={this.handleInputChange('password')}
-          />
-          <PasswordStrengthMeterComponent password={password} onAfterValidation={this.setIsValid}/>
-          <ButtonComponent
-            type={'submit'}
-            label={'Submit'}
-            isDisabled={isSubmitting}
-          />
-        </form>
-      </FormWrapper>
+      <Form onSubmit={this.handleSubmit} noValidate>
+        <InputComponent
+          type={'email'}
+          label={'Your e-mail address'}
+          placeholder={'email'}
+          value={email}
+          onChange={this.handleInputChange('email')}
+        />
+        <PasswordInputComponent
+          label={'Your password'}
+          placeholder={'password'}
+          value={password}
+          onChange={this.handleInputChange('password')}
+        />
+        <PasswordStrengthMeterComponent password={password} onAfterValidation={this.setIsValid}/>
+        <ButtonComponent
+          type={'submit'}
+          label={'Submit'}
+          isDisabled={!isValid || isSubmitting}
+        />
+      </Form>
     );
   }
 }
