@@ -35,7 +35,7 @@ class PasswordInputComponent extends Component {
     const { isVisible } = this.state;
     return (
       <React.Fragment>
-        <InputComponent type="password" placeholder={placeholder} label={label} {...props} />
+        <InputComponent type={isVisible ? 'text' : 'password'} placeholder={placeholder} label={label} {...props} />
         <VisibilityToggle onChange={this.togglePasswordVisibility} value={isVisible} />
       </React.Fragment>
     );

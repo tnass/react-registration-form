@@ -7,6 +7,8 @@ export const theme = {
     brand: {
       white: '#fff',
       grey: '#282c34',
+      green: 'green',
+      red: 'red'
     },
   },
   fontSizes: {

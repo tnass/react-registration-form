@@ -18,7 +18,7 @@ const Header = styled.header`
 `;
 
 const Body = styled.section`
-
+  color: ${prop('theme.colors.brand.white')};
 `;
 
 class App extends Component {
@@ -29,7 +29,7 @@ class App extends Component {
           <p>Registration Form Component Demo Page</p>
         </Header>
         <Body>
-        <RegistrationFormComponent onSubmit={() => {console.log('submitting')}}/>
+        <RegistrationFormComponent onSubmit={(resolve, reject) => {setTimeout(resolve, 2000);}}/>
         </Body>
       </Container>
     );
